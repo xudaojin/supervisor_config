@@ -1,0 +1,16 @@
+[Unit]
+Description=Supervisorsd service
+After=graphical.target dbus.service
+Wants=graphical.target
+
+[Service]
+Environment=PYTHONUNBUFFERED="1"
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ExecStartPre=/usr/bin/xhost +SI:localuser:$(whoami)
+ExecStart=/etc/supervisor/scripts/start_supervisord_service.bash
+Restart=on-failure
+
+
+[Install]
+WantedBy=default.target

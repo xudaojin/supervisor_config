@@ -1,0 +1,11 @@
+[Unit]
+Description=Multivisor service
+After=network.target
+
+
+[Service]
+ExecStart=/etc/supervisor/scripts/start_multivisor_service.bash
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
