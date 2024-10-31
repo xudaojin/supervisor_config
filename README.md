@@ -1,12 +1,14 @@
 # 自动驾驶系统启动管理器配置文件部署包
 
 1. 拉取本仓库代码
-2. 执行 deploy.bash 脚本来进行部署或更新
-   不允许使用 sudo 权限执行
+2. 部署或更新车端
 
 ```bash
-./deplot.bash
+./deplot_client.bash
 ```
 
+3. 服务端更新或部署
 
-
+   ```bash
+   ./deploy_server.bash
+   ```
